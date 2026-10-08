@@ -1,0 +1,44 @@
+spring:
+  application:
+    name: bullhorn-timesheet-service
+  profiles:
+    active: dev
+
+server:
+  port: 8080
+  servlet:
+    context-path: /
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics
+  endpoint:
+    health:
+      show-details: when-authorized
+
+#logging:
+#  level:
+#    com.example.bullhorn: INFO
+#    org.springframework.web: INFO
+#  pattern:
+#    console: "%d{yyyy-MM-dd HH:mm:ss} - %msg%n"
+
+bullhorn:
+  oauth:
+    token-url: https://auth.bullhornstaffing.com/oauth/token
+    client-id: ${BULLHORN_CLIENT_ID:PLACEHOLDER}
+    client-secret: ${BULLHORN_CLIENT_SECRET:PLACEHOLDER}
+    refresh-token: ${BULLHORN_REFRESH_TOKEN:PLACEHOLDER}
+
+  api:
+    login-url: https://rest.bullhornstaffing.com/rest-services/login
+    version: "*"
+
+  session:
+    cache-duration: 50m
+    max-retries: 3
+
+  token-storage:
+    file-path: ./bullhorn-refresh-token.txt

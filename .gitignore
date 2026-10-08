@@ -1,0 +1,39 @@
+# Compiled class files
+*.class
+target/
+*.jar
+*.war
+*.ear
+
+# Log files
+*.log
+logs/
+
+# IDE specific files
+.idea/
+*.iml
+*.iws
+*.ipr
+.vscode/
+.classpath
+.project
+.settings/
+
+# OS specific
+.DS_Store
+Thumbs.db
+
+# Sensitive data - NEVER COMMIT THESE
+bullhorn-refresh-token.txt
+application-local.yml
+*.env
+.env
+
+# Maven
+.mvn/
+mvnw
+mvnw.cmd
+
+.env.example
+target/
+.idea/

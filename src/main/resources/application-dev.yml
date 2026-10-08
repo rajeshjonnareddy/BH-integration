@@ -1,0 +1,17 @@
+logging:
+  level:
+    com.example.bullhorn: DEBUG
+    org.springframework.web.client: DEBUG
+
+# Development profile uses InMemoryRefreshTokenStore
+# Override these with actual credentials when available
+bullhorn:
+  oauth:
+    client-id: ${BULLHORN_CLIENT_ID:your-client-id-here}
+    client-secret: ${BULLHORN_CLIENT_SECRET:your-client-secret-here}
+    refresh-token: ${BULLHORN_REFRESH_TOKEN:your-refresh-token-here}
+
+# Note: For development, you can set environment variables:
+# export BULLHORN_CLIENT_ID=your-actual-client-id
+# export BULLHORN_CLIENT_SECRET=your-actual-client-secret
+# export BULLHORN_REFRESH_TOKEN=your-actual-refresh-token

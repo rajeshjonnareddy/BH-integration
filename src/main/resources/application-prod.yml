@@ -1,0 +1,29 @@
+logging:
+  level:
+    com.example.bullhorn: INFO
+    org.springframework.web: WARN
+
+# Production profile uses ProductionRefreshTokenStore
+# IMPORTANT: Credentials MUST be provided via environment variables
+# DO NOT hardcode credentials in this file
+
+bullhorn:
+  oauth:
+    token-url: https://auth.bullhornstaffing.com/oauth/token
+    client-id: ${BULLHORN_CLIENT_ID}
+    client-secret: ${BULLHORN_CLIENT_SECRET}
+    refresh-token: ${BULLHORN_REFRESH_TOKEN}
+
+  api:
+    login-url: https://rest.bullhornstaffing.com/rest-services/login
+    version: "*"
+
+  session:
+    cache-duration: 50m
+    max-retries: 3
+
+# TODO: Configure production token storage
+# Examples:
+# - Database: Use Spring Data JPA with encrypted column
+# - Vault: Use HashiCorp Vault or AWS Secrets Manager
+# - Redis: Use Spring Data Redis for distributed caching
